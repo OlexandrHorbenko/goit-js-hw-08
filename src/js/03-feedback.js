@@ -49,10 +49,14 @@ form.addEventListener('submit', function handleFormSubmit(evt) {
 
 loadFromLocalStorage(formRefs);
 
-formRefs.emailInputEl.addEventListener('input', function handleEmailInput() {
+const handleEmailInput = () => {
   throttledSaveToLocalStorage(formRefs);
-});
+};
 
-formRefs.messageInputEl.addEventListener('input', function handleMessageInput() {
+const handleMessageInput = () => {
   throttledSaveToLocalStorage(formRefs);
-});
+};
+
+formRefs.emailInputEl.addEventListener('input', handleEmailInput);
+
+formRefs.messageInputEl.addEventListener('input', handleMessageInput);
